@@ -30,7 +30,7 @@
       "options": { "parser": "css" }
     },
     {
-      "files": "*.{ts,js}",
+      "files": "*.{ts,js,mjs}",
       "options": { "parser": "flow" }
     },
     {
