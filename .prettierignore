@@ -1,0 +1,14 @@
+.git
+.yarn
+dist
+node_modules
+
+
+**/*.png
+**/*.jpg
+**/*.gif
+**/*.txt
+
+.yarnrc.yml
+yarn.lock
+
