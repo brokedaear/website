@@ -10,7 +10,7 @@
     "postinstall": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["yarn prettier --write"],
+    "*.{js,jsx,ts,tsx,mjs}": ["yarn prettier --write"],
     "*.{html,css,json}": ["yarn prettier --write"]
   },
   "dependencies": {
