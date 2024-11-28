@@ -16,10 +16,7 @@
   "semi": false,
   "tabWidth": 2,
   "singleQuote": true,
-  "svelteSortOrder": "options-styles-scripts-markup",
-  "svelteBracketNewLine": false,
-  "svelteAllowShorthand": false,
-  "svelteIndentScriptAndStyle": false,
+  "plugins": ["prettier-plugin-astro"],
   "overrides": [
     {
       "files": "*.html",
@@ -48,6 +45,12 @@
     {
       "files": ".prettierrc",
       "options": { "parser": "json" }
+    },
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
     }
   ]
 }
