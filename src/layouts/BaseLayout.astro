@@ -1,0 +1,43 @@
+---
+import Header from '@components/Header.astro'
+
+const { title = '' } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {
+      title !== '' ? (
+        <title>Broke da EAR! {title}</title>
+      ) : (
+        <title>Broke da EAR!</title>
+      )
+    }
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+      integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="static">
+      <div class="sticky top-0 left-0 m-4 p-4">
+        <Header />
+      </div>
+      <main>
+        <div class="flex justify-center items-center my-8 px-4 overflow-y-clip">
+          <div class="w-full sm:max-w-3xl min-h-screen">
+            <div class="mb-12">
+              <slot />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
