@@ -10,6 +10,7 @@ import sitemap from '@astrojs/sitemap'
 import cloudflare from '@astrojs/cloudflare'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
+import mdx from '@astrojs/mdx'
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,7 +26,7 @@ export default defineConfig({
     }),
 
     // mdx MUST come after AutoImport.
-    // mdx(),
+    mdx(),
 
     // Compressor MUST come last.
     compressor(),
