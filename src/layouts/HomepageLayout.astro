@@ -1,0 +1,14 @@
+---
+import BaseLayout from './BaseLayout.astro'
+---
+
+<BaseLayout>
+  <div class="flex flex-col">
+    <!-- TODO: Might have to change dvh to svh -->
+    <div class="w-full min-h-dvh">
+      <div class="mt-24">
+        <slot />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
