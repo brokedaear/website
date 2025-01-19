@@ -11,6 +11,8 @@ jobs:
     name: Fast-Forward Merge dev to main
     if: ${{ github.ref_name == 'dev' }}
     runs-on: ubuntu-${{ vars.RUNNER_VERSION }}
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Repository
