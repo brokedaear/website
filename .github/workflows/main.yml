@@ -9,7 +9,7 @@ on:
 jobs:
   merge-dev-to-main:
     name: Fast-Forward Merge dev to main
-    if: ${{ github.ref == 'refs/heads/dev' }}
+    if: ${{ github.ref_name == 'dev' }}
     runs-on: ubuntu-${{ vars.RUNNER_VERSION }}
 
     steps:
