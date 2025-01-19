@@ -395,6 +395,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@axe-core/playwright@npm:^4.10.1":
+  version: 4.10.1
+  resolution: "@axe-core/playwright@npm:4.10.1"
+  dependencies:
+    axe-core: "npm:~4.10.2"
+  peerDependencies:
+    playwright-core: ">= 1.0.0"
+  checksum: 10c0/d6ca04bfb4d8d01238f2c3b9899a806da4975e847ed017ee03fe147226f55b3c94d21ee6e59a4419708a1c581176f4b3f18fb76f27b2c23ec5dd8405f4d383a0
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.0.0":
   version: 7.26.2
   resolution: "@babel/code-frame@npm:7.26.2"
@@ -2618,6 +2629,13 @@ __metadata:
   version: 2.2.2
   resolution: "await-lock@npm:2.2.2"
   checksum: 10c0/bedf00dad44c6325a655bf3bd523ab9e1ce41023da6a8c379990c76ac1d942ac7e5301627ab84ba37917ab5247506ba429b7f6e4bf77074093f255571b9ad5ee
+  languageName: node
+  linkType: hard
+
+"axe-core@npm:~4.10.2":
+  version: 4.10.2
+  resolution: "axe-core@npm:4.10.2"
+  checksum: 10c0/0e20169077de96946a547fce0df39d9aeebe0077f9d3eeff4896518b96fde857f80b98f0d4279274a7178791744dd5a54bb4f322de45b4f561ffa2586ff9a09d
   languageName: node
   linkType: hard
 
@@ -8964,6 +8982,7 @@ __metadata:
     "@astrojs/netlify": "npm:^6.1.0"
     "@astrojs/sitemap": "npm:^3.2.1"
     "@astrojs/tailwind": "npm:^5.1.4"
+    "@axe-core/playwright": "npm:^4.10.1"
     "@commitlint/cli": "npm:^19.6.1"
     "@commitlint/config-conventional": "npm:^19.6.0"
     "@playwright/test": "npm:^1.49.1"
