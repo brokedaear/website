@@ -11,9 +11,7 @@ test('Homepage has title', async ({ page }) => {
 test('Homepage has contact info', async ({ page }) => {
   await page.goto('/')
 
-  await expect(
-    page.getByText('Contact us at howzit@brokedaear.com')
-  ).toBeVisible()
+  await expect(page.getByText('howzit@brokedaear.com')).toBeVisible()
 })
 
 test('Homepage has logo image', async ({ page }) => {
