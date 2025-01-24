@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
 
-import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 
 import AutoImport from 'astro-auto-import'
@@ -9,6 +8,7 @@ import compressor from 'astro-compressor'
 import mdx from '@astrojs/mdx'
 
 import netlify from '@astrojs/netlify'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,8 +17,11 @@ export default defineConfig({
   adapter: netlify({
     edgeMiddleware: true,
   }),
+  vite: {
+    //@ts-ignore TS-2322
+    plugins: [tailwindcss()],
+  },
   integrations: [
-    tailwind(),
     sitemap(),
 
     AutoImport({
