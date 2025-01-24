@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}

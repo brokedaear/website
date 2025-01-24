@@ -1,4 +1,86 @@
-<p
-  >!!! we do not use Digital Rights Management (DRM) for our plugins, i.e. no
-  iLok !!!</p
->
+---
+import AttentionCallout from '@components/callouts/AttentionCallout.astro'
+import ContactInfoBox from '@components/ContactInfoBox.astro'
+import AboutLogo from '@components/images/AboutLogo.astro'
+import CenteredLayout from '@layouts/CenteredLayout.astro'
+---
+
+<CenteredLayout title="About">
+  <div class="bg-green-800">
+    <div
+      class="center flex flex-col min-h-screen justify-center items-center text-neutral-200"
+    >
+      <header class="max-w-xl pb-8">
+        <AboutLogo />
+        <h1
+          class="center font-sans font-semibold tracking-wide text-sm sm:text-lg p-2 w-fit"
+          >ABOUT US</h1
+        >
+      </header>
+      <div class="max-w-xl p-4">
+        <section class="pb-4">
+          <h2 class="font-semibold tracking-wide text-lg pb-4">da WHO?</h2>
+          <p class="tracking-wide p-4 text-xl sm:text-2xl leading-normal"
+            >We're a small posse of musicians, engineers, artists, designers,
+            and programmers sharing the same mission: <span
+              class="text-amber-400"
+              ><strong class="tracking-wider"
+                >we challenge audio plugin industry norms by encouraging
+                creators to confront their sounds in novel visual contexts.
+              </strong>
+            </span></p
+          >
+        </section>
+        <section class="pb-4">
+          <h2 class="font-semibold tracking-wide text-lg pb-4">da WHAT?</h2>
+          <div class="p-4">
+            <p class="tracking-wide text-xl sm:text-2xl leading-normal">
+              In-the-box production, mixing, and mastering has no need be a
+              bunch of literal knobs, sliders, and graphs inside a graphical
+              box. Sound exists outside the confines of the studio too, so
+              <span class="text-amber-400"
+                ><strong class="tracking-wider"
+                  >why should we box ourselves in reinventing and implementing
+                  analog gear?
+                </strong>
+              </span>
+            </p>
+            <br />
+          </div>
+          <div class="border-1 border-dotted p-2 pb-4 w-fit center">
+            <section class="font-mono text-sm">
+              <header class="text-center py-2">
+                <span>***</span>
+                <h2>DA BOTTOM LINE</h2>
+                <span>***</span>
+              </header>
+              <p
+                class="font-light text-justify w-fit center p-4 leading-relaxed"
+              >
+                Think outside the box while working in it. <em
+                  class="not-italic"
+                  >When you make music, you don't need to use just your ears. We
+                  hope our plugins can let you use your eyes just as well</em
+                >.
+              </p>
+            </section>
+          </div>
+        </section>
+      </div>
+      <!-- <AttentionCallout
+        >we do not use any type of DRM for our plugins, i.e. no iLok</AttentionCallout
+      > -->
+      <footer>
+        <nav>
+          <a
+            class="p-1 font-semibold tracking-wide w-fit hover:underline"
+            href="/">RETURN HOME</a
+          >
+        </nav>
+      </footer>
+    </div>
+    <footer class="py-4">
+      <ContactInfoBox />
+    </footer>
+  </div>
+</CenteredLayout>

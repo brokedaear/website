@@ -1,39 +1,43 @@
 ---
-import Logo from '@components/Logo.astro'
+import InfoCallout from '@components/callouts/InfoCallout.astro'
+import ContactInfoBox from '@components/ContactInfoBox.astro'
+import HeroLogo from '@components/images/HeroLogo.astro'
 import CenteredLayout from '@layouts/CenteredLayout.astro'
 ---
 
 <CenteredLayout>
   <div class="bg-amber-500">
-    <div
-      class="ml-auto mr-auto flex flex-col min-h-screen justify-center items-center"
-    >
+    <div class="center flex flex-col min-h-screen justify-center items-center">
       <header>
-        <Logo />
+        <HeroLogo />
         <h1
-          class="ml-auto mr-auto font-sans font-bold text-sm sm:text-lg p-2 text-neutral-700 w-fit"
+          class="center font-sans font-bold text-sm sm:text-lg p-2 text-neutral-700 w-fit"
           >BROKE DA EAR! AUDIO PLUGINS</h1
         >
+        <nav class="p-1">
+          <ul class="flex flex-col items-center">
+            <li
+              class="p-1 font-bold text-neutral-500 w-fit opacity-50 select-none"
+              >PLUGINS</li
+            >
+            <li
+              class="p-1 font-bold text-neutral-500 w-fit opacity-50 select-none"
+              >BLOG</li
+            >
+            <li class="p-1 font-bold text-neutral-700 w-fit"
+              ><a href="/about" class="hover:underline">ABOUT</a></li
+            >
+            <li
+              class="p-1 font-bold text-neutral-500 w-fit opacity-50 select-none"
+              >CART</li
+            >
+          </ul>
+        </nav>
       </header>
-      <div
-        style="height: 8; border-radius: 100%;"
-        class="ml-auto mr-auto flex flex-col bg-red-200 p-4 justify-center max-w-xs sm:max-w-sm"
-      >
-        <section class="ml-auto mr-auto text-center">
-          <p class="p-2 font-semibold tracking-wide text-xs"
-            >Contact us at <a
-              href="mailto:howzit@brokedaear.com"
-              class="underline font-mono">howzit@brokedaear.com</a
-            ></p
-          >
-        </section>
-      </div>
+      <InfoCallout>we are under construction</InfoCallout>
       <footer>
-        <p
-          class="font-mono text-xs sm:text-sm tracking-wide font-semibold text-neutral-700 p-8"
-          >...our site is under construction...</p
-        ></footer
-      >
+        <ContactInfoBox />
+      </footer>
     </div>
   </div>
 </CenteredLayout>
