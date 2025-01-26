@@ -1,5 +1,4 @@
 ---
-import AttentionCallout from '@components/callouts/AttentionCallout.astro'
 import ContactInfoBox from '@components/ContactInfoBox.astro'
 import AboutLogo from '@components/images/AboutLogo.astro'
 import CenteredLayout from '@layouts/CenteredLayout.astro'
@@ -69,11 +68,25 @@ import CenteredLayout from '@layouts/CenteredLayout.astro'
               <br />
             </div>
             <footer>
-              <nav class="flex flex-col items-center">
-                <a
-                  class="p-1 font-semibold tracking-wide w-fit hover:underline"
-                  href="/">RETURN HOME</a
-                >
+              <nav
+                id="footer-nav"
+                aria-label="Main"
+                class="flex flex-col items-center"
+              >
+                <ul class="text-center">
+                  <li class="p-1">
+                    <a
+                      class="p-1 font-semibold tracking-wide w-fit hover:underline"
+                      href="/about/privacy-policy">SEE PRIVACY POLICY</a
+                    >
+                  </li>
+                  <li class="p-1">
+                    <a
+                      class="p-1 font-semibold tracking-wide w-fit hover:underline"
+                      href="/">RETURN HOME</a
+                    >
+                  </li>
+                </ul>
               </nav>
             </footer>
           </section>
