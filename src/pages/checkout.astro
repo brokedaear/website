@@ -1,0 +1,62 @@
+---
+import CenteredLayout from '@layouts/CenteredLayout.astro'
+import {
+  PUBLIC_STRIPE_API_KEY,
+  PRIVATE_STRIPE_API_KEY,
+  PLUGIN_1_PRICE_ID,
+} from '@lib/environment'
+import Stripe from 'stripe'
+
+const { origin } = Astro.url
+const stripe = new Stripe(PRIVATE_STRIPE_API_KEY)
+const session = await stripe.checkout.sessions.create({
+  ui_mode: 'embedded',
+  mode: 'payment',
+  automatic_tax: { enabled: true },
+  return_url: `${origin}`, // Add session ID here later.
+  line_items: [
+    {
+      price: PLUGIN_1_PRICE_ID,
+      quantity: 1,
+    },
+  ],
+})
+---
+
+<script>
+  import { loadStripe } from '@stripe/stripe-js'
+  const checkoutDiv = document.querySelector('#checkout') as HTMLElement
+
+  const { clientSecret, stripeKey } = checkoutDiv.dataset
+  const stripe = await loadStripe(stripeKey!)
+
+  const checkout = await stripe?.initEmbeddedCheckout({
+    fetchClientSecret: async () => clientSecret!,
+  })
+
+  //   const appearance: Appearance = {
+  //     theme: 'flat',
+  //   }
+
+  //   const elements = stripe?.elements({ appearance, clientSecret })!
+  //   const paymentElementOptions: StripePaymentElementOptions = {
+  //     layout: 'accordion',
+  //   }
+
+  //   const paymentElement = elements.create('payment', paymentElementOptions)
+  //   paymentElement.mount('#payment-element')
+
+  checkout?.mount('#checkout')
+</script>
+
+<CenteredLayout>
+  <div class="center flex flex-col min-h-screen justify-center items-center">
+    <form>
+      <div
+        id="checkout"
+        data-stripe-key={PUBLIC_STRIPE_API_KEY}
+        data-client-secret={session.client_secret}
+        class="w-fit md:w-5xl"></div>
+    </form>
+  </div>
+</CenteredLayout>

@@ -1,0 +1,82 @@
+---
+import AttentionCallout from '@components/callouts/AttentionCallout.astro'
+import InfoCallout from '@components/callouts/InfoCallout.astro'
+import ContactInfoBox from '@components/ContactInfoBox.astro'
+import CenteredLayout from '@layouts/CenteredLayout.astro'
+---
+
+<CenteredLayout title="Login">
+  <div class="bg-blue-200">
+    <div class="center flex flex-col min-h-screen justify-center items-center">
+      <InfoCallout
+        >login to your account to view your products or purchase more</InfoCallout
+      >
+      <form
+        id="login-form"
+        action="login"
+        method="post"
+        class="p-4 border-1 shadow-sm border-dashed bg-orange-100"
+      >
+        <h1
+          class="center font-sans font-bold text-sm sm:text-lg p-2 text-neutral-700 w-fit mb-3 pb-3"
+          >DA LOGIN</h1
+        >
+        <fieldset class="mb-2 pb-2">
+          <div class="flex flex-col">
+            <label hidden class="lowercase" for="loginform-email">Email</label>
+            <input
+              id="loginform-email"
+              type="email"
+              placeholder="email address"
+              aria-required="true"
+              aria-invalid="true"
+              class="m-1 p-1 border-b-1 border-dotted text-center"
+            />
+            <label hidden class="lowercase" for="loginform-password"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="loginform-password"
+              class="m-1 p-1 border-b-1 border-dotted text-center"
+              value=""
+              placeholder="password"
+              aria-required="true"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="p-1">
+            <input
+              class="m-1 p-1 w-full hover:opacity-50 hover:cursor-pointer font-bold text-sm tracking-wide border-1 border-dotted"
+              type="submit"
+              value="LOG IN"
+            />
+          </div>
+        </fieldset>
+      </form>
+      <AttentionCallout
+        ><a
+          class="hover:underline text-neutral-500"
+          href="/oops-forgot-my-password">I forgot my password</a
+        ></AttentionCallout
+      >
+      <div class="pb-4 mb-4">
+        <a
+          class="p-1 font-semibold tracking-wide w-fit hover:underline"
+          href="/">RETURN HOME</a
+        >
+      </div>
+      <footer>
+        <ContactInfoBox />
+      </footer>
+    </div>
+  </div>
+</CenteredLayout>
+
+<style>
+  @import 'tailwindcss';
+  input::placeholder {
+    @apply font-mono text-sm;
+  }
+</style>
