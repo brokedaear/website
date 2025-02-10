@@ -26,6 +26,7 @@ mprocs.log
 .netlify
 
 .direnv
+.zed
 
 # Playwright
 /test-results/
