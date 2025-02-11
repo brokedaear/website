@@ -1,74 +1,98 @@
 ---
-import AttentionCallout from '@components/callouts/AttentionCallout.astro'
 import InfoCallout from '@components/callouts/InfoCallout.astro'
 import ContactInfoBox from '@components/ContactInfoBox.astro'
 import CenteredLayout from '@layouts/CenteredLayout.astro'
-import { DEV_MODE } from '@lib/environment'
+import { validEmail } from '@lib/validator'
 
-const errors = { ep: '' }
+const isRegistered = async (email: string) => {
+  return new Promise(resolve => false)
+}
+
+const registerUser = async (email: string, password: string) => {
+  return new Promise(resolve => true)
+}
+
+const errors = { email: '', password: '', passwordConfirmation: '' }
 if (Astro.request.method === 'POST') {
-  if (DEV_MODE) {
+  try {
     const data = await Astro.request.formData()
     const email = data.get('email')
+
+    if (typeof email !== 'string' || !validEmail(email)) {
+      errors.email += 'Email is not valid.'
+    } else if (await isRegistered(email)) {
+      errors.email += 'Email is already registered.'
+    }
+
     const password = data.get('password')
-    console.log(email, password)
-    if (email === 'root@root.com' && password === 'password') {
-      return Astro.redirect('/')
-    } else if (email === '') {
-      errors.ep += 'Please input an email'
-    } else if (password === '') {
-      errors.ep += 'Please input password'
-    } else {
-      errors.ep += 'Invalid email or password'
+    const passwordConfirmation = data.get('passwordConfirmation')
+
+    if (password?.toString() !== passwordConfirmation?.toString()) {
+      errors.password += 'Password mismatch'
+    }
+
+    const hasErrors = Object.values(errors).some(msg => msg)
+    if (!hasErrors) {
+      await registerUser(email!.toString(), password!.toString())
+      //   return Astro.redirect('/login')
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message)
     }
   }
 }
 ---
 
-<CenteredLayout title="Login">
-  <div class="bg-blue-200">
+<CenteredLayout title="Register">
+  <div class="bg-blue-50">
     <div class="center flex flex-col min-h-screen justify-center items-center">
-      <InfoCallout
-        >login to your account to view your products or purchase more</InfoCallout
-      >
+      <InfoCallout>register an account to purchase products</InfoCallout>
       <form
         id="login-form"
         method="post"
-        class="p-4 border-1 shadow-sm border-dashed bg-orange-100"
+        class="p-4 border-1 shadow-sm border-dashed bg-orange-50 mb-2 pb-2"
       >
         <h1
           class="center font-sans font-bold text-sm sm:text-lg p-2 text-neutral-700 w-fit mb-3 pb-3"
-          >DA LOGIN</h1
+          >DA REGISTRATION</h1
         >
         <fieldset class="mb-2 pb-2">
           <div class="flex flex-col">
-            {
-              errors.ep && (
-                <p class="text-center bg-red-500 font-mono text-sm p-1 text-white mb-2">
-                  {errors.ep}
-                </p>
-              )
-            }
             <label hidden class="lowercase" for="loginform-email">Email</label>
             <input
+              id="registerform-email"
               type="email"
-              id="loginform-email"
               name="email"
               placeholder="email address"
               aria-required="true"
               aria-invalid="true"
               class="m-1 p-1 border-b-1 border-dotted text-center"
             />
+            {errors.email && <p>{errors.email}</p>}
             <label hidden class="lowercase" for="loginform-password"
               >Password</label
             >
             <input
               type="password"
-              id="loginform-password"
+              id="registerform-password"
               name="password"
               class="m-1 p-1 border-b-1 border-dotted text-center"
               value=""
               placeholder="password"
+              aria-required="true"
+            />
+            <label hidden class="lowercase" for="loginform-password"
+              >Password</label
+            >
+            {errors.password && <p>Invalid password</p>}
+            <input
+              type="password"
+              id="registerform-passwordConfirmation"
+              name="passwordConfirmation"
+              class="m-1 p-1 border-b-1 border-dotted text-center"
+              value=""
+              placeholder="confirm password"
               aria-required="true"
             />
           </div>
@@ -76,18 +100,18 @@ if (Astro.request.method === 'POST') {
         <fieldset> I'M NOT A ROBOT!!!</fieldset>
         <fieldset>
           <div class="p-1">
+            <!-- <input
+              class="m-1 p-1 w-full hover:opacity-50 hover:cursor-pointer font-bold text-sm tracking-wide border-1 border-dotted"
+              type="submit"
+              value="REGISTER"
+            /> -->
             <button
               class="m-1 p-1 w-full hover:opacity-50 hover:cursor-pointer font-bold text-sm tracking-wide border-1 border-dotted"
-              >LOG IN</button
+              >REGISTER</button
             >
           </div>
         </fieldset>
       </form>
-      <AttentionCallout
-        ><a class="hover:underline text-neutral-500" href="/reset-password"
-          >I forgot my password</a
-        ></AttentionCallout
-      >
       <div class="pb-4 mb-4">
         <a
           class="p-1 font-semibold tracking-wide w-fit hover:underline"
