@@ -2081,6 +2081,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/validatorjs@npm:^3":
+  version: 3.15.5
+  resolution: "@types/validatorjs@npm:3.15.5"
+  checksum: 10c0/829d0a7bc0ac1c7e55bf185eef213f151b353f8597731d7f3ad597f0c6d4ae43275683c9f43a07f3bcccd1378ad62ad7bad62a3f1c9256a2ab8985eb2f2179eb
+  languageName: node
+  linkType: hard
+
 "@ungap/structured-clone@npm:^1.0.0":
   version: 1.2.0
   resolution: "@ungap/structured-clone@npm:1.2.0"
@@ -8556,6 +8563,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"validatorjs@npm:^3.22.1":
+  version: 3.22.1
+  resolution: "validatorjs@npm:3.22.1"
+  checksum: 10c0/213e23b383fd9b63929d1a3141475f40c6bb48d9193e6c8b8420bce932acc7a41483337ce4ed9eda19f5e23106eaf26420d83953537fce4aa88cd9ad4b7aac3a
+  languageName: node
+  linkType: hard
+
 "vfile-location@npm:^5.0.0":
   version: 5.0.3
   resolution: "vfile-location@npm:5.0.3"
@@ -9041,6 +9055,7 @@ __metadata:
     "@stripe/stripe-js": "npm:^5.6.0"
     "@tailwindcss/vite": "npm:^4.0.6"
     "@types/node": "npm:^22.13.1"
+    "@types/validatorjs": "npm:^3"
     astro: "npm:^5.2.5"
     astro-auto-import: "npm:^0.4.4"
     astro-compressor: "npm:^1.0.0"
@@ -9056,6 +9071,7 @@ __metadata:
     tailwind-merge: "npm:^3.0.1"
     tailwindcss: "npm:^4.0.6"
     typescript: "npm:^5.7.3"
+    validatorjs: "npm:^3.22.1"
     vitest: "npm:^3.0.5"
   languageName: unknown
   linkType: soft
