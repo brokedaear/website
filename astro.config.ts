@@ -16,6 +16,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   site: 'https://brokedaear.com',
   output: 'server',
+
+  // This is enabled by default, however, its better to be
+  // clear about it here.
+  security: {
+    checkOrigin: true,
+  },
+
   adapter: netlify({
     edgeMiddleware: true,
   }),
