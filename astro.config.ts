@@ -7,6 +7,8 @@ import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
 import mdx from '@astrojs/mdx'
 
+import react from '@astrojs/react'
+
 import netlify from '@astrojs/netlify'
 import tailwindcss from '@tailwindcss/vite'
 
@@ -22,6 +24,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [
+    react(),
     sitemap(),
 
     AutoImport({
