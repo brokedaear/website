@@ -1709,6 +1709,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@oslojs/asn1@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@oslojs/asn1@npm:1.0.0"
+  dependencies:
+    "@oslojs/binary": "npm:1.0.0"
+  checksum: 10c0/993856b931cb0087fa6a6323f09de388aa20fbab3322acdb178a7c35fcd05983c44c7a47bac7364cd96b45125c27586265e8fc9fec733d3183ffc56b6bec2634
+  languageName: node
+  linkType: hard
+
+"@oslojs/binary@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@oslojs/binary@npm:1.0.0"
+  checksum: 10c0/d416a393af23f42b50c6f8412a3a6d94a84707c2006511abce1c4bed680c22ed2247ccb442b09237fa78ca06c355875573d1c08ccba2942f292ec0534310e4f8
+  languageName: node
+  linkType: hard
+
+"@oslojs/crypto@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@oslojs/crypto@npm:1.0.1"
+  dependencies:
+    "@oslojs/asn1": "npm:1.0.0"
+    "@oslojs/binary": "npm:1.0.0"
+  checksum: 10c0/a1b3e4875f3df8bf357dd2b59e1d55ced099227bbeb0975b48bf8e001002780575c5df9e7c174bcc42f89713ed9ad4a965e181e835ff569ccaa3b258781a615b
+  languageName: node
+  linkType: hard
+
 "@oslojs/encoding@npm:^1.1.0":
   version: 1.1.0
   resolution: "@oslojs/encoding@npm:1.1.0"
@@ -9789,6 +9815,8 @@ __metadata:
     "@axe-core/playwright": "npm:^4.10.1"
     "@commitlint/cli": "npm:^19.7.1"
     "@commitlint/config-conventional": "npm:^19.7.1"
+    "@oslojs/crypto": "npm:^1.0.1"
+    "@oslojs/encoding": "npm:^1.1.0"
     "@playwright/test": "npm:^1.50.1"
     "@stripe/stripe-js": "npm:^5.6.0"
     "@tailwindcss/vite": "npm:^4.0.6"
