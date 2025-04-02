@@ -27,11 +27,6 @@
           typescript
           typescript-language-server
           stripe-cli
-
-          # System tools
-          lazygit
-          htop
-          mprocs
         ];
 
       in
