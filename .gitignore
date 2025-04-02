@@ -33,3 +33,5 @@ mprocs.log
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+temp
