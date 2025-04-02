@@ -24,6 +24,7 @@
         commonPackages = with pkgs; [
           # Development related
           nodejs_22
+          yarn-berry
           typescript
           typescript-language-server
           stripe-cli
