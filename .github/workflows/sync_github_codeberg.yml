@@ -1,5 +1,4 @@
-# Sync repo to the Forgejo mirror
-name: Repo sync (GitHub -> Forgejo)
+name: Sync website repo (GitHub -> Codeberg)
 on:
   push:
     branches:
@@ -9,8 +8,8 @@ on:
     - cron: '0 */6 * * *'
 
 jobs:
-  sync-repo-to-forgejo:
-    runs-on: ubuntu-latest
+  sync-repo-to-codeberg:
+    runs-on: ubuntu-${{ vars.RUNNER_VERSION }}
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
