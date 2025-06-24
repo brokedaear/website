@@ -8,6 +8,7 @@ import compressor from 'astro-compressor'
 import mdx from '@astrojs/mdx'
 
 import react from '@astrojs/react'
+import favicons from 'astro-favicons'
 
 import netlify from '@astrojs/netlify'
 import tailwindcss from '@tailwindcss/vite'
@@ -16,6 +17,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   site: 'https://brokedaear.com',
   output: 'server',
+  compressHTML: import.meta.env.PROD,
 
   // This is enabled by default, however, its better to be
   // clear about it here.
@@ -33,6 +35,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap(),
+    favicons(),
 
     AutoImport({
       imports: [],

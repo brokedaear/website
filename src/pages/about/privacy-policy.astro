@@ -21,29 +21,29 @@ const effectiveDate = new Date(info.frontmatter.effectiveDate)
 <CenteredLayout title="Privacy Policy">
   <div class="center flex flex-col justify-center items-center p-2 m-1">
     <article class="max-w-full sm:max-w-xl font-sans text-base">
-      <header class="p-1 m-1">
-        <h1 class="font-black mb-1 pb-1 text-xl sm:text-3xl uppercase"
+      <header class="p-1 m-1 pb-4">
+        <h1 class="font-bold font-block mb-1 pb-4 text-xl sm:text-3xl uppercase"
           >Broke da EAR!<br />{info.frontmatter.title}</h1
         >
-        <p
-          ><em>Effective Date: <time>{effectiveDate.toDateString()}</time></em
-          ></p
-        >
+        <p class="italic"
+          >Effective Date: <time>{effectiveDate.toDateString()}</time>
+        </p>
       </header>
-      <p class="p-2 text-lg sm:text-xl text-left leading-normal"
+      <p
+        class="p-2 pb-4 text-lg sm:text-xl text-left leading-normal tracking-wide"
         >At Broke da EAR!, we are dedicated to maintaining your trust by
         safeguarding your privacy. This Privacy Policy outlines the ways we
         gather, utilize, disclose, and protect your personal information when
         you interact with our website or use our services. By accessing our
         website, you agree to the practices described in this Privacy Policy.</p
       >
-      <div class="sm:p-2">
+      <div class="sm:p-2 tracking-wide">
         <Content
           components={{ h2: H2, h3: H3, ul: UL, p: P, li: LI, hr: HR }}
         />
       </div>
-      <footer class="p-4 border-1 my-4 border-dotted">
-        <h1 class="font-black leading-loose text-center">Contact Us</h1>
+      <footer class="p-4 border-1 my-4 border-dotted tracking-wide">
+        <h1 class="font-bold leading-loose text-center">Contact Us</h1>
         <p class="p-1">
           If you have any questions, concerns, or requests regarding this
           Privacy Policy or how your data is handled, please reach out to us at:
@@ -61,8 +61,8 @@ const effectiveDate = new Date(info.frontmatter.effectiveDate)
   <footer class="m-4">
     <nav id="footer-nav" aria-label="Main" class="flex flex-col items-center">
       <a
-        class="p-1 font-bold tracking-wide w-fit hover:underline text-sm"
-        href="/about">BACK TO ABOUT</a
+        class="p-1 font-bold tracking-wide w-fit hover:underline text-sm uppercase font-block"
+        href="/about">Back to About</a
       >
     </nav>
   </footer>

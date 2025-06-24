@@ -1,19 +1,19 @@
 ---
-
+import AboutLogo from './images/AboutLogo.astro'
 ---
 
-<div
-  style="height: 8; border-radius: 100%;"
-  class="center flex flex-col bg-red-200 p-4 justify-center max-w-xs sm:max-w-sm"
->
-  <section class="center text-center">
+<div class="p-2 justify-center max-w-xs sm:max-w-sm flex">
+  <div class="w-20 h-20 p-2 mx-auto opacity-80">
+    <AboutLogo />
+  </div>
+  <div class="relative top-2 -left-2">
     <address
-      class="p-2 font-semibold tracking-wider text-xs font-serif"
+      class="p-2 font-bold tracking-wider font-serif"
       aria-label="Contact Information"
     >
       <a href="mailto:howzit@brokedaear.com" class="hover:underline"
         >howzit@brokedaear.com</a
       ></address
     >
-  </section>
+  </div>
 </div>
