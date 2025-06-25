@@ -29,7 +29,7 @@
           with pkgs;
           [
             nodejs_22
-            yarn-berry
+            corepack
             typescript
           ]
           ++ da-flake.lib.${system}.ciPackages;
