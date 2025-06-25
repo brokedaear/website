@@ -1,7 +1,5 @@
 ---
 import ContactInfoBox from '@components/ContactInfoBox.astro'
-import AboutLogo from '@components/images/AboutLogo.astro'
-import HawaiiFlag from '@components/images/HawaiiFlag.astro'
 import WordMarkLogo from '@components/images/WordMarkLogo.astro'
 import MadeInHawaii from '@components/MadeInHawaii.astro'
 import CenteredLayout from '@layouts/CenteredLayout.astro'
@@ -16,7 +14,9 @@ import CenteredLayout from '@layouts/CenteredLayout.astro'
         class="font-block uppercase text-center font-bold tracking-wide text-xl p-2 pb-8 leading-relaxed"
         >About</h1
       >
-      <WordMarkLogo />
+      <a href="/">
+        <WordMarkLogo />
+      </a>
     </header>
     <div class="py-10">
       <p class="tracking-wide leading-normal"
