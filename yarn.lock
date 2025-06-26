@@ -2000,7 +2000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oslojs/crypto@npm:^1.0.1":
+"@oslojs/crypto@npm:1.0.1, @oslojs/crypto@npm:^1.0.1":
   version: 1.0.1
   resolution: "@oslojs/crypto@npm:1.0.1"
   dependencies:
@@ -2010,10 +2010,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oslojs/encoding@npm:^1.1.0":
+"@oslojs/encoding@npm:0.4.1":
+  version: 0.4.1
+  resolution: "@oslojs/encoding@npm:0.4.1"
+  checksum: 10c0/e3ccee039f385cca8a53afb1584c85d66d3685e20142649aab8f6e7f71ea11e026861e60e3d61de8d34a78adf9049e6da6813e3de51ba2b86239a4200c08ee76
+  languageName: node
+  linkType: hard
+
+"@oslojs/encoding@npm:1.1.0, @oslojs/encoding@npm:^1.1.0":
   version: 1.1.0
   resolution: "@oslojs/encoding@npm:1.1.0"
   checksum: 10c0/5553a0974dca60e1a8b247b7b97abcb141cc7ee4e22444f424a07921d6a5f76a43c316f3ee669222787fdef6549f8749cc6d68ff5a631e2542521c56fe36417f
+  languageName: node
+  linkType: hard
+
+"@oslojs/jwt@npm:0.2.0":
+  version: 0.2.0
+  resolution: "@oslojs/jwt@npm:0.2.0"
+  dependencies:
+    "@oslojs/encoding": "npm:0.4.1"
+  checksum: 10c0/aadcda3e5274293e07fca6842ef4f4dccecce11b1f7e655ad2f042983233eb5d121db981e9f64451b66abb417b66744371ce29743282df7319d40b420c3c93be
   languageName: node
   linkType: hard
 
@@ -3358,6 +3374,17 @@ __metadata:
     tar-stream: "npm:^3.0.0"
     zip-stream: "npm:^6.0.1"
   checksum: 10c0/02afd87ca16f6184f752db8e26884e6eff911c476812a0e7f7b26c4beb09f06119807f388a8e26ed2558aa8ba9db28646ebd147a4f99e46813b8b43158e1438e
+  languageName: node
+  linkType: hard
+
+"arctic@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "arctic@npm:3.7.0"
+  dependencies:
+    "@oslojs/crypto": "npm:1.0.1"
+    "@oslojs/encoding": "npm:1.1.0"
+    "@oslojs/jwt": "npm:0.2.0"
+  checksum: 10c0/253b083289200d2bb956700cfe5faf9fbdf020941047808e70a1288d4b9c0c455a1807bf918eba600247e04428b42339e85ce7d520b4e2a4cecf50be76964adf
   languageName: node
   linkType: hard
 
@@ -11598,6 +11625,7 @@ __metadata:
     "@types/react": "npm:^19.1.8"
     "@types/react-dom": "npm:^19.1.6"
     "@types/validator": "npm:^13.15.2"
+    arctic: "npm:^3.7.0"
     astro: "npm:^5.10.1"
     astro-auto-import: "npm:^0.4.4"
     astro-compressor: "npm:^1.0.0"

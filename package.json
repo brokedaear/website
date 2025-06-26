@@ -27,6 +27,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "arctic": "^3.7.0",
     "astro": "^5.10.1",
     "astro-auto-import": "^0.4.4",
     "astro-compressor": "^1.0.0",
