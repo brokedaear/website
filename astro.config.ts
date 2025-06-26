@@ -1,8 +1,8 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig, envField } from 'astro/config'
 
 import sitemap from '@astrojs/sitemap'
-
+import auth from 'auth-astro'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
 import mdx from '@astrojs/mdx'
@@ -24,7 +24,14 @@ export default defineConfig({
   security: {
     checkOrigin: true,
   },
-
+  env: {
+    schema: {
+      STRIPE_PUBLIC_API_KEY: envField.string({
+        context: 'client',
+        access: 'public',
+      }),
+    },
+  },
   adapter: netlify({
     edgeMiddleware: true,
   }),
@@ -34,6 +41,7 @@ export default defineConfig({
   },
   integrations: [
     react(),
+    auth(),
     sitemap(),
     favicons(),
 

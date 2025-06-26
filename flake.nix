@@ -29,7 +29,7 @@
           with pkgs;
           [
             nodejs_22
-            corepack
+            yarn-berry
             typescript
           ]
           ++ da-flake.lib.${system}.ciPackages;
@@ -53,6 +53,7 @@
 
           ci = pkgs.mkShellNoCC {
             buildInputs = ciPackages;
+            CI = "true";
             shellHook = ''
               echo "Entering CI shell. Only essential CI tools available."
             '';
