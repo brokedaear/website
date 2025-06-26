@@ -17,11 +17,17 @@ export default defineConfig({
   site: 'https://brokedaear.com',
   output: 'server',
   compressHTML: import.meta.env.PROD,
-
   // This is enabled by default, however, its better to be
   // clear about it here.
   security: {
     checkOrigin: true,
+  },
+  session: {
+    driver: 'redis',
+    options: {
+      url: import.meta.env.REDIS_URL,
+    },
+    ttl: 3600,
   },
   env: {
     schema: {

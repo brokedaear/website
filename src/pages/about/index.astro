@@ -3,6 +3,12 @@ import ContactInfoBox from '@components/ContactInfoBox.astro'
 import WordMarkLogo from '@components/images/WordMarkLogo.astro'
 import MadeInHawaii from '@components/MadeInHawaii.astro'
 import CenteredLayout from '@layouts/CenteredLayout.astro'
+
+// Caches page for Netlify Adapter.
+Astro.response.headers.set(
+  'CDN-Cache-Control',
+  'public, max-age=45, must-revalidate'
+)
 ---
 
 <CenteredLayout title="About">
