@@ -2,7 +2,6 @@
 import { defineConfig, envField } from 'astro/config'
 
 import sitemap from '@astrojs/sitemap'
-import auth from 'auth-astro'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
 import mdx from '@astrojs/mdx'
@@ -30,6 +29,10 @@ export default defineConfig({
         context: 'client',
         access: 'public',
       }),
+      BACKEND_SERVICE_URL: envField.string({
+        context: 'client',
+        access: 'public',
+      }),
     },
   },
   adapter: netlify({
@@ -41,7 +44,6 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    auth(),
     sitemap(),
     favicons(),
 

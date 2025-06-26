@@ -3565,18 +3565,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"auth-astro@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "auth-astro@npm:4.2.0"
-  dependencies:
-    set-cookie-parser: "npm:^2.5.1"
-  peerDependencies:
-    "@auth/core": ^0.37.3
-    astro: ">=4.0.0"
-  checksum: 10c0/1cb59aa7045651c0bd5fcae2b577d7fe97e9d1de6a391d1654d4791b364456f2a89aa1fdbaafedb1d2be255e1dc87ec83acf3f5c51bc451639bad95336c3433e
-  languageName: node
-  linkType: hard
-
 "await-lock@npm:^2.2.2":
   version: 2.2.2
   resolution: "await-lock@npm:2.2.2"
@@ -9840,13 +9828,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"set-cookie-parser@npm:^2.5.1":
-  version: 2.7.1
-  resolution: "set-cookie-parser@npm:2.7.1"
-  checksum: 10c0/060c198c4c92547ac15988256f445eae523f57f2ceefeccf52d30d75dedf6bff22b9c26f756bd44e8e560d44ff4ab2130b178bd2e52ef5571bf7be3bd7632d9a
-  languageName: node
-  linkType: hard
-
 "sharp@npm:^0.33.3, sharp@npm:^0.33.5":
   version: 0.33.5
   resolution: "sharp@npm:0.33.5"
@@ -11623,7 +11604,6 @@ __metadata:
     astro-embed: "npm:^0.9.0"
     astro-favicons: "npm:^3.1.5"
     astro-seo: "npm:^0.8.4"
-    auth-astro: "npm:^4.2.0"
     eslint: "npm:^9.29.0"
     eslint-config-prettier: "npm:^10.1.5"
     husky: "npm:^9.1.7"
