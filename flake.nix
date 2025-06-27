@@ -48,6 +48,10 @@
             buildInputs = ciPackages ++ devPackages;
             shellHook = ''
               export PS1='$(printf "\033[01;34m(nix) \033[00m\033[01;32m[%s] \033[01;33m(node $(node -v))\033[00m$\033[00m " "\W")'
+              echo "Yarn version: $(yarn -v)"
+              echo "Setting up environment..."
+              yarn
+              yarn playwright install
             '';
           };
 
