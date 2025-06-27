@@ -11,6 +11,7 @@ import favicons from 'astro-favicons'
 
 import netlify from '@astrojs/netlify'
 import tailwindcss from '@tailwindcss/vite'
+// import { sessionCookieName } from './src/lib/session/constants'
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,15 +20,53 @@ export default defineConfig({
   compressHTML: import.meta.env.PROD,
   // This is enabled by default, however, its better to be
   // clear about it here.
+  experimental: {
+    // https://www.piyushmehta.com/blog/astro-v5-9-content-security-policy
+    csp: {
+      directives: [
+        "default-src: 'self'",
+        'upgrade-insecure-requests',
+        "connect-src: 'self' https://api.stripe.com",
+        // For some reason a 'font-src' directive is not necessary.
+        //
+        // TODO: add one for the backend?
+      ],
+      styleDirective: {
+        resources: [
+          // Ensure inline styles work.
+          'self',
+          "'unsafe-line'",
+          // Ensure google fonts work.
+          'self',
+          'https://fonts.googleapis.com',
+        ],
+      },
+      scriptDirective: {
+        resources: ['self', 'http://localhost:4321'],
+        strictDynamic: true,
+      },
+    },
+  },
   security: {
     checkOrigin: true,
   },
   session: {
-    driver: 'redis',
-    options: {
-      url: import.meta.env.REDIS_URL,
+    // driver: 'redis',
+    // options: {
+    //   url: import.meta.env.REDIS_URL,
+    //   base: 'session',
+    //   ttl: 86400,
+    // },
+    driver: 'lru-cache',
+    cookie: {
+      name: 'bde-web-session',
+      // Use 'lax' over 'strict', users aren't logged in if visiting
+      // the site from an external link.
+      sameSite: 'lax',
+      secure: import.meta.env.PROD,
+      path: '/',
     },
-    ttl: 3600,
+    ttl: 86400, // an entire day.
   },
   env: {
     schema: {
@@ -43,6 +82,7 @@ export default defineConfig({
   },
   adapter: netlify({
     edgeMiddleware: true,
+    experimentalStaticHeaders: true,
   }),
   vite: {
     //@ts-ignore TS-2322
