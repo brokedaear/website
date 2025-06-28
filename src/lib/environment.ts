@@ -1,5 +1,5 @@
 const DEV_MODE = import.meta.env.DEV
-const PUBLIC_STRIPE_API_KEY = import.meta.env.PUBLIC_STRIPE_KEY
+const PUBLIC_STRIPE_API_KEY = import.meta.env.PUBLIC_STRIPE_API_KEY
 const PRIVATE_STRIPE_API_KEY = import.meta.env.PRIVATE_STRIPE_KEY
 
 // Found under "Product Catalog".

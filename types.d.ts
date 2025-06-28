@@ -1,16 +1,18 @@
 interface User {
   id: number;
   githubId: number;
-  username: string;
+  email: string;
 }
 
 interface CartItem {
-  id: number;
+  id: string;
   name: string;
-  total: number;
+  count: number;
   price: number;
 }
 
+type ItemID = string
+
 interface ShoppingCart {
-  items: Array<CartItem>[];
+  items: Map<ItemID, CartItem>;
 }

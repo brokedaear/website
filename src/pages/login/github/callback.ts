@@ -57,5 +57,5 @@ export async function GET(context: APIContext): Promise<Response> {
   const sessionToken = generateSessionToken()
   const session = await createSession(sessionToken, user.id)
   setSessionTokenCookie(context, sessionToken, session.expiresAt)
-  return context.redirect('/')
+  return context.redirect('/account')
 }

@@ -11,8 +11,12 @@
     "test": "playwright test"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,mjs}": ["yarn prettier --write"],
-    "*.{html,css,json,astro}": ["yarn prettier --write"]
+    "*.{js,jsx,ts,tsx,mjs}": [
+      "yarn prettier --write"
+    ],
+    "*.{html,css,json,astro}": [
+      "yarn prettier --write"
+    ]
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
